@@ -7,7 +7,7 @@ public class Program
     {
         var program = new Program();
         var branch = program.BuildBranch();
-        var depth = program.GetBranchDepth(branch, 1);
+        var depth = program.GetBranchDepth(branch, 1); //sending depth as 1 because the first object is also considered the 1st layer of the structure
 
         Console.WriteLine(depth);
 
@@ -15,7 +15,7 @@ public class Program
 
     public int GetBranchDepth(Branch branch, int depth)
     {
-        var result = depth + 1;
+        var result = depth + 1; //adding 1 because the if statement doesn't consider the last layer of the branch since they all return null.
 
         foreach(var b in branch.Branches)
         {
